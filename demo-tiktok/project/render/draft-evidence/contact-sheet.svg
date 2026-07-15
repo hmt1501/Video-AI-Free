@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="480" viewBox="0 0 1024 480"><rect width="100%" height="100%" fill="#fff"/>
+<image href="first-frame.png" x="16" y="16" width="320" height="180" preserveAspectRatio="xMidYMid meet"/><text x="16" y="220" fill="#111" font-family="system-ui, sans-serif" font-size="16">first-frame @ 0s</text>
+<image href="quarter.png" x="352" y="16" width="320" height="180" preserveAspectRatio="xMidYMid meet"/><text x="352" y="220" fill="#111" font-family="system-ui, sans-serif" font-size="16">quarter @ 5s</text>
+<image href="midpoint.png" x="688" y="16" width="320" height="180" preserveAspectRatio="xMidYMid meet"/><text x="688" y="220" fill="#111" font-family="system-ui, sans-serif" font-size="16">midpoint @ 10s</text>
+<image href="three-quarter.png" x="16" y="248" width="320" height="180" preserveAspectRatio="xMidYMid meet"/><text x="16" y="452" fill="#111" font-family="system-ui, sans-serif" font-size="16">three-quarter @ 15s</text>
+<image href="payoff-frame.png" x="352" y="248" width="320" height="180" preserveAspectRatio="xMidYMid meet"/><text x="352" y="452" fill="#111" font-family="system-ui, sans-serif" font-size="16">payoff-frame @ 19.93s</text>
+</svg>

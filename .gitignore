@@ -1,0 +1,9 @@
+# Orkas-VideoStudio is a separate upstream clone — recreate it from patches/ (see README)
+Orkas-VideoStudio/
+
+node_modules/
+dist/
+*.log
+
+# QA repair state is machine-local
+demo-tiktok/project/composition/qa/draft-repair-state.json

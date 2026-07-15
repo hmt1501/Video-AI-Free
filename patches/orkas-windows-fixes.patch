@@ -1,0 +1,60 @@
+diff --git a/packages/core/src/runtime/binaries.ts b/packages/core/src/runtime/binaries.ts
+index 36fcbd6..7116ca4 100644
+--- a/packages/core/src/runtime/binaries.ts
++++ b/packages/core/src/runtime/binaries.ts
+@@ -27,7 +27,9 @@ function isExecutable(p: string): boolean {
+ function candidates(name: string): string[] {
+   if (!IS_WIN) return [name];
+   const exts = (process.env.PATHEXT || '.EXE;.CMD;.BAT').split(';').map((e) => e.toLowerCase());
+-  return [name, ...exts.map((e) => name + e)];
++  // Prefer extension candidates: a bare-name file (e.g. the `npx` shell script
++  // shipped next to npx.cmd) exists but cannot be spawned on Windows.
++  return [...exts.map((e) => name + e), name];
+ }
+ 
+ /**
+diff --git a/packages/core/src/runtime/spawn.ts b/packages/core/src/runtime/spawn.ts
+index 5439a61..64e6362 100644
+--- a/packages/core/src/runtime/spawn.ts
++++ b/packages/core/src/runtime/spawn.ts
+@@ -20,6 +20,15 @@ export interface RunOptions {
+ 
+ const DEFAULT_MAX_BUFFER = 16 * 1024 * 1024; // 16 MiB
+ 
++/** Node >= 20.12 refuses to spawn .cmd/.bat directly (CVE-2024-27980); they must go through a shell. */
++function isWindowsScript(file: string): boolean {
++  return process.platform === 'win32' && /\.(cmd|bat)$/i.test(file);
++}
++
++function quoteForCmdShell(arg: string): string {
++  return /[\s"^&|<>()]/.test(arg) ? `"${arg}"` : arg;
++}
++
+ /**
+  * Spawn a child process and capture its output. Always resolves with the exit
+  * code (never rejects on a non-zero exit) so callers decide what a failure
+@@ -28,12 +37,18 @@ const DEFAULT_MAX_BUFFER = 16 * 1024 * 1024; // 16 MiB
+ export function run(file: string, args: string[], opts: RunOptions = {}): Promise<RunResult> {
+   const maxBuffer = opts.maxBuffer ?? DEFAULT_MAX_BUFFER;
+   return new Promise<RunResult>((resolve, reject) => {
+-    const child = spawn(file, args, {
+-      cwd: opts.cwd,
+-      env: opts.env ?? process.env,
+-      signal: opts.signal,
+-      stdio: ['ignore', 'pipe', 'pipe'],
+-    });
++    const winScript = isWindowsScript(file);
++    const child = spawn(
++      winScript ? quoteForCmdShell(file) : file,
++      winScript ? args.map(quoteForCmdShell) : args,
++      {
++        cwd: opts.cwd,
++        env: opts.env ?? process.env,
++        signal: opts.signal,
++        stdio: ['ignore', 'pipe', 'pipe'],
++        shell: winScript,
++      },
++    );
+ 
+     let stdout = '';
+     let stderr = '';
