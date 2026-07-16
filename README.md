@@ -5,6 +5,8 @@ Không dùng AI footage → **không thuộc diện gắn nhãn AI trên TikTok*
 
 Video demo hoàn chỉnh: `demo-tiktok/project/render/video-final.mp4` (24s, 1080×1920, 30fps — "3 phím tắt Windows", **có thuyết minh tiếng Việt + phụ đề burn sẵn**). Các bản trung gian: `video-voiced.mp4` (có tiếng, chưa phụ đề), `video.mp4` (bản câm 20s đầu tiên).
 
+> 📋 **Làm video mới?** Xem [HUONG-DAN-TAO-VIDEO.md](HUONG-DAN-TAO-VIDEO.md) — playbook từng bước từ kịch bản → giọng đọc → render → phụ đề → đăng TikTok (README này chỉ là hướng dẫn setup môi trường).
+
 ## Cấu trúc repo
 
 ```
