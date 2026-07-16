@@ -3,7 +3,7 @@
     "aspect_ratio": "9:16",
     "width": 1080,
     "height": 1920,
-    "duration": 20,
+    "duration": 24,
     "fps": 30,
     "language": "vi"
   },
@@ -20,31 +20,31 @@
     {
       "id": "hook",
       "start": 0,
-      "duration": 4,
+      "duration": 4.6,
       "copy": ["MẸO WINDOWS", "3 PHÍM TẮT", "90% người dùng không biết"],
       "visual_focus": "Stacked oversized type with a floating row of decorative keycaps",
       "layout": "full-frame stacked type"
     },
     {
       "id": "tip1",
-      "start": 4,
-      "duration": 5,
+      "start": 4.6,
+      "duration": 5.8,
       "copy": ["MẸO 1/3", "Win + V", "Lịch sử Clipboard", "Dán lại mọi thứ bạn đã copy trước đó"],
       "visual_focus": "Keycap combo pressed at center, description below",
       "layout": "keycap row center, description card below"
     },
     {
       "id": "tip2",
-      "start": 9,
-      "duration": 5,
+      "start": 10.4,
+      "duration": 5.7,
       "copy": ["MẸO 2/3", "Win + Shift + S", "Chụp màn hình vùng chọn", "Kéo chọn vùng, ảnh tự lưu vào clipboard"],
       "visual_focus": "Three-key combo pressed higher in frame, description card lower",
       "layout": "keycap row high, description card low"
     },
     {
       "id": "tip3",
-      "start": 14,
-      "duration": 6,
+      "start": 16.1,
+      "duration": 7.9,
       "copy": ["MẸO 3/3", "Win + .", "Bảng Emoji", "Chèn emoji vào bất kỳ ô nhập nào", "Follow để xem thêm mẹo mỗi ngày"],
       "visual_focus": "Keycap combo with smiley mark, CTA bar slides up at the end",
       "layout": "keycap row center, CTA bar bottom"
@@ -87,9 +87,10 @@
   },
   "scene_variation": "hook is stacked type with a floating key row; tip scenes alternate keycap-row vertical position (center / high / center) and accent color per tip; the final scene adds a CTA bar that slides up from the bottom",
   "audio": {
-    "narration_owner": "none",
-    "path": null,
-    "target_duration": 20,
-    "render_silent": true
+    "narration_owner": "compose",
+    "path": "assets/narration.mp3",
+    "target_duration": 24,
+    "render_silent": false,
+    "tts": "Gemini TTS (gemini-2.5-flash-preview-tts, voice Kore), 4 clips mixed at scene offsets +0.25s"
   }
 }

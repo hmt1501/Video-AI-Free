@@ -18,14 +18,14 @@
     "lint": {
       "ok": true,
       "op": "composition.lint",
-      "findings": "{\n  \"ok\": true,\n  \"errorCount\": 0,\n  \"warningCount\": 0,\n  \"issueCount\": 0,\n  \"totalIssueCount\": 0,\n  \"issues\": [],\n  \"engine\": \"ovs-native-preflight\",\n  \"profile\": \"orkas-html-composition\",\n  \"canvas\": {\n    \"width\": 1080,\n    \"height\": 1920,\n    \"durationSec\": 20\n  }\n}"
+      "findings": "{\n  \"ok\": true,\n  \"errorCount\": 0,\n  \"warningCount\": 0,\n  \"issueCount\": 0,\n  \"totalIssueCount\": 0,\n  \"issues\": [],\n  \"engine\": \"ovs-native-preflight\",\n  \"profile\": \"orkas-html-composition\",\n  \"canvas\": {\n    \"width\": 1080,\n    \"height\": 1920,\n    \"durationSec\": 24\n  }\n}"
     },
     "authoring": {
       "ok": true,
       "mode": "model_authored_html",
       "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\composition\\index.html",
       "design_contract_path": "D:\\project\\autovideoai\\demo-tiktok\\project\\composition\\design-contract.json",
-      "scene_map_path": "",
+      "scene_map_path": "D:\\project\\autovideoai\\demo-tiktok\\project\\composition\\scene-map.json",
       "shotlist_path": ""
     },
     "contract_html": {
@@ -45,13 +45,13 @@
     },
     "audio_timing": {
       "ok": true,
-      "skipped": true,
-      "narration_path": "",
-      "narration_file_exists": false,
+      "skipped": false,
+      "narration_path": "assets/narration.mp3",
+      "narration_file_exists": true,
       "narration_map_path": "D:\\project\\autovideoai\\demo-tiktok\\project\\composition\\narration-map.json",
       "narration_line_count": 0,
-      "scene_count": 0,
-      "audio_track_count": 0,
+      "scene_count": 4,
+      "audio_track_count": 1,
       "error_count": 0,
       "warning_count": 0,
       "issue_count": 0,
@@ -93,20 +93,20 @@
     "inspect": {
       "ok": true,
       "op": "composition.inspect",
-      "findings": "{\n  \"ok\": true,\n  \"errorCount\": 0,\n  \"warningCount\": 2,\n  \"issueCount\": 2,\n  \"totalIssueCount\": 2,\n  \"issues\": [\n    {\n      \"code\": \"FONT_TOO_SMALL\",\n      \"severity\": \"warning\",\n      \"message\": \"Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 52px, 54px, 56px, 60px, 64px, +1 more. Raise body text to >= the floor and titles well above it, or it won't read at phone size.\",\n      \"source\": \"ovs-craft-lint\"\n    },\n    {\n      \"code\": \"PALETTE_LARGE\",\n      \"severity\": \"warning\",\n      \"message\": \"12 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first.\",\n      \"source\": \"ovs-craft-lint\"\n    }\n  ],\n  \"engine\": \"hyperframes\",\n  \"raw\": {\n    \"schemaVersion\": 1,\n    \"duration\": 20,\n    \"samples\": [\n      1.111,\n      3.333,\n      5.556,\n      7.778,\n      10,\n      12.222,\n      14.444,\n      16.667,\n      18.889\n    ],\n    \"tolerance\": 2,\n    \"strict\": false,\n    \"collapseStatic\": true,\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"issueCount\": 0,\n    \"totalIssueCount\": 0,\n    \"truncated\": false,\n    \"issues\": [],\n    \"_meta\": {\n      \"version\": \"0.7.21\",\n      \"latestVersion\": \"0.7.58\",\n      \"updateAvailable\": true\n    },\n    \"craft\": [\n      {\n        \"level\": \"warn\",\n        \"code\": \"FONT_TOO_SMALL\",\n        \"message\": \"Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 52px, 54px, 56px, 60px, 64px, +1 more. Raise body text to >= the floor and titles well above it, or it won't read at phone size.\"\n      },\n      {\n        \"level\": \"warn\",\n        \"code\": \"PALETTE_LARGE\",\n        \"message\": \"12 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first.\"\n      }\n    ]\n  }\n}",
+      "findings": "{\n  \"ok\": true,\n  \"errorCount\": 0,\n  \"warningCount\": 2,\n  \"issueCount\": 2,\n  \"totalIssueCount\": 2,\n  \"issues\": [\n    {\n      \"code\": \"FONT_TOO_SMALL\",\n      \"severity\": \"warning\",\n      \"message\": \"Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 52px, 54px, 56px, 60px, 64px, +1 more. Raise body text to >= the floor and titles well above it, or it won't read at phone size.\",\n      \"source\": \"ovs-craft-lint\"\n    },\n    {\n      \"code\": \"PALETTE_LARGE\",\n      \"severity\": \"warning\",\n      \"message\": \"12 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first.\",\n      \"source\": \"ovs-craft-lint\"\n    }\n  ],\n  \"engine\": \"hyperframes\",\n  \"raw\": {\n    \"schemaVersion\": 1,\n    \"duration\": 24,\n    \"samples\": [\n      1.333,\n      4,\n      6.667,\n      9.333,\n      12,\n      14.667,\n      17.333,\n      20,\n      22.667\n    ],\n    \"tolerance\": 2,\n    \"strict\": false,\n    \"collapseStatic\": true,\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"issueCount\": 0,\n    \"totalIssueCount\": 0,\n    \"truncated\": false,\n    \"issues\": [],\n    \"_meta\": {\n      \"version\": \"0.7.21\",\n      \"latestVersion\": \"0.7.58\",\n      \"updateAvailable\": true\n    },\n    \"craft\": [\n      {\n        \"level\": \"warn\",\n        \"code\": \"FONT_TOO_SMALL\",\n        \"message\": \"Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 52px, 54px, 56px, 60px, 64px, +1 more. Raise body text to >= the floor and titles well above it, or it won't read at phone size.\"\n      },\n      {\n        \"level\": \"warn\",\n        \"code\": \"PALETTE_LARGE\",\n        \"message\": \"12 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first.\"\n      }\n    ]\n  }\n}",
       "raw": {
         "schemaVersion": 1,
-        "duration": 20,
+        "duration": 24,
         "samples": [
-          1.111,
-          3.333,
-          5.556,
-          7.778,
-          10,
-          12.222,
-          14.444,
-          16.667,
-          18.889
+          1.333,
+          4,
+          6.667,
+          9.333,
+          12,
+          14.667,
+          17.333,
+          20,
+          22.667
         ],
         "tolerance": 2,
         "strict": false,
@@ -161,34 +161,66 @@
       "output": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft.mp4"
     },
     "media_probe": {
-      "duration": 20,
-      "video_duration": 20,
+      "duration": 24.021333,
+      "video_duration": 24,
+      "audio_duration": 24.021333,
       "width": 1080,
       "height": 1920,
       "fps": 30,
-      "has_audio": false,
+      "has_audio": true,
       "v_codec": "h264",
-      "a_codec": null
+      "a_codec": "aac"
     },
     "audio_normalize": {
       "skipped": true,
-      "reason": "no audio stream"
+      "reason": "within draft loudness tolerance",
+      "loudness_before": {
+        "input_i": -15.26,
+        "input_tp": -3.29,
+        "input_lra": 3.6,
+        "target_i": -14,
+        "target_tp": -1
+      },
+      "decision": {
+        "normalize": false,
+        "reason": "within draft loudness tolerance"
+      }
+    },
+    "loudness_before": {
+      "input_i": -15.26,
+      "input_tp": -3.29,
+      "input_lra": 3.6,
+      "target_i": -14,
+      "target_tp": -1
     },
     "media_qa": {
       "ok": true,
       "issue_count": 0,
       "error_count": 0,
       "warning_count": 0,
-      "media_duration_seconds": 20,
+      "media_duration_seconds": 24.02,
       "video": {
         "width": 1080,
         "height": 1920,
         "fps": 30,
         "codec": "h264"
       },
-      "audio": null,
-      "expected_audio_end_seconds": null,
-      "source_audio_tracks": [],
+      "audio": {
+        "codec": "aac",
+        "duration_seconds": 24.02
+      },
+      "expected_audio_end_seconds": 24,
+      "source_audio_tracks": [
+        {
+          "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\composition\\assets\\narration.mp3",
+          "start_seconds": 0,
+          "volume": 1,
+          "declared_duration_seconds": 24,
+          "source_duration_seconds": 24,
+          "expected_duration_seconds": 24,
+          "expected_end_seconds": 24
+        }
+      ],
       "issues": []
     },
     "video_qa": {
@@ -203,7 +235,14 @@
         "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\quarter.png",
         "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\midpoint.png",
         "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\three-quarter.png",
-        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\payoff-frame.png"
+        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\payoff-frame.png",
+        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\hook-mid.png",
+        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip1-start.png",
+        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip1-mid.png",
+        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip2-start.png",
+        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip2-mid.png",
+        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip3-start.png",
+        "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip3-mid.png"
       ],
       "samples": [
         {
@@ -211,53 +250,130 @@
           "time_seconds": 0,
           "frame_index": 0,
           "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\first-frame.png",
-          "hash": "1487adc7d2f6dafa17709e33a2c62949",
-          "brightness": 30.12,
-          "contrast": 237,
+          "hash": "d553cee8feb5067f2f3def7b2b814fe0",
+          "brightness": 31.04,
+          "contrast": 233,
           "width": 1080,
           "height": 1920
         },
         {
           "label": "quarter",
-          "time_seconds": 5,
-          "frame_index": 75,
+          "time_seconds": 6,
+          "frame_index": 90,
           "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\quarter.png",
-          "hash": "957599c49fa4944c9123b4b9aa8fce9b",
-          "brightness": 33.09,
-          "contrast": 234,
+          "hash": "c9f494d6bb94b85ef5ee38342e738d24",
+          "brightness": 33.51,
+          "contrast": 237,
           "width": 1080,
           "height": 1920
         },
         {
           "label": "midpoint",
-          "time_seconds": 10,
-          "frame_index": 150,
+          "time_seconds": 12,
+          "frame_index": 180,
           "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\midpoint.png",
-          "hash": "93d84c63517f27fcf414abea1efae2b5",
-          "brightness": 35.66,
-          "contrast": 240,
+          "hash": "d89457b4432aaf747c4dd9ffc9a76024",
+          "brightness": 36.19,
+          "contrast": 244,
           "width": 1080,
           "height": 1920
         },
         {
           "label": "three-quarter",
-          "time_seconds": 15,
-          "frame_index": 225,
+          "time_seconds": 18,
+          "frame_index": 270,
           "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\three-quarter.png",
-          "hash": "595072e19e4c49445d8ce4dea3254292",
-          "brightness": 32.88,
-          "contrast": 239,
+          "hash": "be663de550c059cfda972aeaae71bc79",
+          "brightness": 33.32,
+          "contrast": 241,
           "width": 1080,
           "height": 1920
         },
         {
           "label": "payoff-frame",
-          "time_seconds": 19.93,
-          "frame_index": 299,
+          "time_seconds": 23.93,
+          "frame_index": 359,
           "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\payoff-frame.png",
-          "hash": "54b9301cf6e5861da7cf8320d160a6e4",
-          "brightness": 46.83,
-          "contrast": 236,
+          "hash": "aeb8753fd36bb643f49710bc15a3ad03",
+          "brightness": 46.76,
+          "contrast": 241,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "hook-mid",
+          "time_seconds": 2.27,
+          "frame_index": 34,
+          "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\hook-mid.png",
+          "hash": "56ae480d295ab191eb5adf73e7e65e13",
+          "brightness": 35.11,
+          "contrast": 241,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "tip1-start",
+          "time_seconds": 4.6,
+          "frame_index": 69,
+          "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip1-start.png",
+          "hash": "1904230337f4f51c95dfae56f4dd95ea",
+          "brightness": 27.03,
+          "contrast": 142,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "tip1-mid",
+          "time_seconds": 7.47,
+          "frame_index": 112,
+          "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip1-mid.png",
+          "hash": "c117683606beb7302595ddd71bc81800",
+          "brightness": 33.52,
+          "contrast": 239,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "tip2-start",
+          "time_seconds": 10.4,
+          "frame_index": 156,
+          "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip2-start.png",
+          "hash": "db3ae9585061cd908541944d0f9e42d0",
+          "brightness": 27.05,
+          "contrast": 142,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "tip2-mid",
+          "time_seconds": 13.2,
+          "frame_index": 198,
+          "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip2-mid.png",
+          "hash": "bb93a4fe340a4196a840abb1a315c6a5",
+          "brightness": 36.2,
+          "contrast": 240,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "tip3-start",
+          "time_seconds": 16.07,
+          "frame_index": 241,
+          "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip3-start.png",
+          "hash": "47f96153e0352d49b3dba2814524bd43",
+          "brightness": 27.03,
+          "contrast": 138,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "tip3-mid",
+          "time_seconds": 20,
+          "frame_index": 300,
+          "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip3-mid.png",
+          "hash": "54005d5d69f494b8c4046a6e5949738c",
+          "brightness": 33.18,
+          "contrast": 241,
           "width": 1080,
           "height": 1920
         }
@@ -277,7 +393,7 @@
   },
   "media": {
     "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft.mp4",
-    "bytes": 1613353
+    "bytes": 2158151
   },
   "video_qa": {
     "ok": true,
@@ -291,7 +407,14 @@
       "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\quarter.png",
       "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\midpoint.png",
       "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\three-quarter.png",
-      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\payoff-frame.png"
+      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\payoff-frame.png",
+      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\hook-mid.png",
+      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip1-start.png",
+      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip1-mid.png",
+      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip2-start.png",
+      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip2-mid.png",
+      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip3-start.png",
+      "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip3-mid.png"
     ],
     "samples": [
       {
@@ -299,53 +422,130 @@
         "time_seconds": 0,
         "frame_index": 0,
         "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\first-frame.png",
-        "hash": "1487adc7d2f6dafa17709e33a2c62949",
-        "brightness": 30.12,
-        "contrast": 237,
+        "hash": "d553cee8feb5067f2f3def7b2b814fe0",
+        "brightness": 31.04,
+        "contrast": 233,
         "width": 1080,
         "height": 1920
       },
       {
         "label": "quarter",
-        "time_seconds": 5,
-        "frame_index": 75,
+        "time_seconds": 6,
+        "frame_index": 90,
         "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\quarter.png",
-        "hash": "957599c49fa4944c9123b4b9aa8fce9b",
-        "brightness": 33.09,
-        "contrast": 234,
+        "hash": "c9f494d6bb94b85ef5ee38342e738d24",
+        "brightness": 33.51,
+        "contrast": 237,
         "width": 1080,
         "height": 1920
       },
       {
         "label": "midpoint",
-        "time_seconds": 10,
-        "frame_index": 150,
+        "time_seconds": 12,
+        "frame_index": 180,
         "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\midpoint.png",
-        "hash": "93d84c63517f27fcf414abea1efae2b5",
-        "brightness": 35.66,
-        "contrast": 240,
+        "hash": "d89457b4432aaf747c4dd9ffc9a76024",
+        "brightness": 36.19,
+        "contrast": 244,
         "width": 1080,
         "height": 1920
       },
       {
         "label": "three-quarter",
-        "time_seconds": 15,
-        "frame_index": 225,
+        "time_seconds": 18,
+        "frame_index": 270,
         "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\three-quarter.png",
-        "hash": "595072e19e4c49445d8ce4dea3254292",
-        "brightness": 32.88,
-        "contrast": 239,
+        "hash": "be663de550c059cfda972aeaae71bc79",
+        "brightness": 33.32,
+        "contrast": 241,
         "width": 1080,
         "height": 1920
       },
       {
         "label": "payoff-frame",
-        "time_seconds": 19.93,
-        "frame_index": 299,
+        "time_seconds": 23.93,
+        "frame_index": 359,
         "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\payoff-frame.png",
-        "hash": "54b9301cf6e5861da7cf8320d160a6e4",
-        "brightness": 46.83,
-        "contrast": 236,
+        "hash": "aeb8753fd36bb643f49710bc15a3ad03",
+        "brightness": 46.76,
+        "contrast": 241,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "hook-mid",
+        "time_seconds": 2.27,
+        "frame_index": 34,
+        "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\hook-mid.png",
+        "hash": "56ae480d295ab191eb5adf73e7e65e13",
+        "brightness": 35.11,
+        "contrast": 241,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "tip1-start",
+        "time_seconds": 4.6,
+        "frame_index": 69,
+        "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip1-start.png",
+        "hash": "1904230337f4f51c95dfae56f4dd95ea",
+        "brightness": 27.03,
+        "contrast": 142,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "tip1-mid",
+        "time_seconds": 7.47,
+        "frame_index": 112,
+        "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip1-mid.png",
+        "hash": "c117683606beb7302595ddd71bc81800",
+        "brightness": 33.52,
+        "contrast": 239,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "tip2-start",
+        "time_seconds": 10.4,
+        "frame_index": 156,
+        "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip2-start.png",
+        "hash": "db3ae9585061cd908541944d0f9e42d0",
+        "brightness": 27.05,
+        "contrast": 142,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "tip2-mid",
+        "time_seconds": 13.2,
+        "frame_index": 198,
+        "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip2-mid.png",
+        "hash": "bb93a4fe340a4196a840abb1a315c6a5",
+        "brightness": 36.2,
+        "contrast": 240,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "tip3-start",
+        "time_seconds": 16.07,
+        "frame_index": 241,
+        "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip3-start.png",
+        "hash": "47f96153e0352d49b3dba2814524bd43",
+        "brightness": 27.03,
+        "contrast": 138,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "tip3-mid",
+        "time_seconds": 20,
+        "frame_index": 300,
+        "path": "D:\\project\\autovideoai\\demo-tiktok\\project\\render\\draft-evidence\\tip3-mid.png",
+        "hash": "54005d5d69f494b8c4046a6e5949738c",
+        "brightness": 33.18,
+        "contrast": 241,
         "width": 1080,
         "height": 1920
       }

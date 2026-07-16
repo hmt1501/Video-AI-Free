@@ -3,7 +3,7 @@
 Tạo video TikTok dạng **motion graphics** (HTML + GSAP render ra MP4) bằng [Orkas-VideoStudio](https://github.com/Orkas-AI/Orkas-VideoStudio), điều khiển qua coding agent (Claude Code).
 Không dùng AI footage → **không thuộc diện gắn nhãn AI trên TikTok**, và không tốn phí API.
 
-Video demo hoàn chỉnh: `demo-tiktok/project/render/video.mp4` (20s, 1080×1920, 30fps — "3 phím tắt Windows").
+Video demo hoàn chỉnh: `demo-tiktok/project/render/video-final.mp4` (24s, 1080×1920, 30fps — "3 phím tắt Windows", **có thuyết minh tiếng Việt + phụ đề burn sẵn**). Các bản trung gian: `video-voiced.mp4` (có tiếng, chưa phụ đề), `video.mp4` (bản câm 20s đầu tiên).
 
 ## Cấu trúc repo
 
@@ -75,8 +75,37 @@ Copy thư mục `demo-tiktok` làm template, sửa `index.html` + `design-contra
 - Video Compose (motion graphics, edit footage thật) = **không phải synthetic media**, không cần nhãn AI.
 - Nếu sau này dùng AI footage (Generate line): **phải bật nhãn AI** — TikTok xác nhận nhãn không giảm reach; nội dung AI *không khai báo* mới bị gỡ/hạn chế.
 
+## Thuyết minh (TTS) + phụ đề — quy trình đã chạy
+
+TTS dùng **Gemini TTS** (key Google AI Studio) qua script `scripts/tts-gemini.mjs` (vì `ovs speak` chỉ nhận endpoint kiểu OpenAI, Gemini không tương thích).
+
+**Cấu hình key (KHÔNG commit key vào git):** đặt env var `GEMINI_API_KEY`, hoặc tạo file `%USERPROFILE%\.config\orkas-video-studio\gemini.json` nội dung `{"apiKey":"<key của bạn>"}`.
+
+Quy trình cho một video mới có thuyết minh:
+
+```powershell
+# 1. Sinh từng câu thuyết minh (1 câu / scene) → WAV 24kHz
+node scripts\tts-gemini.mjs --text "Nội dung câu 1" --out ...\assets\tts\s1.wav --voice Kore --style "Đọc bằng tiếng Việt, giọng trẻ trung năng lượng cao, tốc độ nhanh vừa phải như video TikTok"
+
+# 2. Xem độ dài từng clip (script in ra "seconds") → GIÃN SCENE THEO LỜI ĐỌC (không ép ngược lại):
+#    scene_duration ≈ clip_seconds + 0.5s; narration đặt lệch +0.25s sau đầu scene
+
+# 3. Ghép thành 1 track khớp timeline (adelay = mốc đầu scene + 250ms):
+ffmpeg -y -i tts\s1.wav -i tts\s2.wav ... -filter_complex "[0]adelay=250|250[a0];[1]adelay=4850|4850[a1];...;[a0][a1]...amix=inputs=4:normalize=0,apad=whole_dur=24[out]" -map "[out]" -ar 44100 -b:a 192k narration.mp3
+
+# 4. Trong composition: thêm <audio src="./assets/narration.mp3" data-start="0" data-duration="24" data-track-index="0" data-volume="1"> vào root,
+#    cập nhật data-duration root + các scene, VIẾT scene-map.json (bắt buộc khi có narration: mỗi scene có text + start/duration),
+#    cập nhật audio section trong design-contract.json (render_silent: false)
+
+# 5. Render qua draft gate như thường → video-voiced.mp4
+
+# 6. Phụ đề: viết file .srt theo mốc thời gian narration, rồi burn:
+node ..\Orkas-VideoStudio\packages\cli\dist\index.js edit burnsubs project/render/video-voiced.mp4 --srt project/render/subtitles.srt --out project/render/video-final.mp4
+```
+
+Lỗi đã gặp: **đừng viết cue phụ đề trùng nội dung với CTA bar cuối video** — chữ đè lên nhau. Phần nào đã có chữ to trên hình thì phụ đề bỏ qua hoặc kết thúc sớm.
+
 ## Bước tiếp theo (chưa làm)
 
-- **Thuyết minh (TTS)**: cần API key riêng — set `OVS_TTS_BASE_URL / OVS_TTS_API_KEY / OVS_TTS_MODEL / OVS_TTS_VOICE`, chạy `ovs speak` ra `assets/narration.mp3` rồi thêm thẻ `<audio>` vào composition (xem skill `stage-compose`: `node ...\index.js skill stage-compose`). Chi phí ~vài trăm đồng/video.
 - **Nhạc nền**: chèn nhạc trending trực tiếp trong app TikTok khi đăng (thường lợi reach hơn nhúng sẵn).
 - **Gửi PR bản vá Windows** lên repo gốc Orkas-AI/Orkas-VideoStudio.

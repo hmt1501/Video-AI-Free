@@ -1,0 +1,34 @@
+{
+  "canvas": { "width": 1080, "height": 1920, "duration": 24, "language": "vi" },
+  "audio": { "narration": "assets/narration.mp3" },
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0,
+      "duration": 4.6,
+      "headline": "3 PHÍM TẮT",
+      "narration": "Đây là 3 phím tắt Windows mà 90 phần trăm người dùng không hề biết."
+    },
+    {
+      "id": "tip1",
+      "start": 4.6,
+      "duration": 5.8,
+      "headline": "Lịch sử Clipboard",
+      "narration": "Windows cộng V — mở lịch sử clipboard, dán lại mọi thứ bạn đã copy trước đó."
+    },
+    {
+      "id": "tip2",
+      "start": 10.4,
+      "duration": 5.7,
+      "headline": "Chụp màn hình vùng chọn",
+      "narration": "Windows, Shift, S — chụp nhanh một vùng màn hình, ảnh tự lưu thẳng vào clipboard."
+    },
+    {
+      "id": "tip3",
+      "start": 16.1,
+      "duration": 7.9,
+      "headline": "Bảng Emoji",
+      "narration": "Còn Windows cộng dấu chấm sẽ mở bảng emoji ở bất kỳ đâu. Follow để xem thêm mẹo mỗi ngày!"
+    }
+  ]
+}

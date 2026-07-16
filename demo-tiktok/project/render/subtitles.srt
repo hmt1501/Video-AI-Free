@@ -1,0 +1,26 @@
+1
+00:00:00,250 --> 00:00:04,380
+Đây là 3 phím tắt Windows
+mà 90% người dùng không hề biết
+
+2
+00:00:04,850 --> 00:00:07,300
+Windows + V: mở lịch sử clipboard
+
+3
+00:00:07,300 --> 00:00:10,100
+dán lại mọi thứ bạn đã copy trước đó
+
+4
+00:00:10,650 --> 00:00:13,200
+Windows + Shift + S:
+chụp nhanh một vùng màn hình
+
+5
+00:00:13,200 --> 00:00:15,850
+ảnh tự lưu thẳng vào clipboard
+
+6
+00:00:16,350 --> 00:00:20,200
+Còn Windows + . sẽ mở bảng emoji
+ở bất kỳ đâu
