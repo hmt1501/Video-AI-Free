@@ -5,13 +5,16 @@
  * Usage:
  *   node scripts/tts-gemini.mjs --text "Xin chào" --out out.wav [--voice Kore] [--style "Đọc với giọng năng lượng"]
  *
- * The API key is read from the GEMINI_API_KEY env var, or from
- * %USERPROFILE%/.config/orkas-video-studio/gemini.json ({"apiKey": "..."}).
+ * The API key is read from (first hit wins):
+ *   1. GEMINI_API_KEY env var
+ *   2. .env next to this script's repo root (GEMINI_API_KEY=...) — gitignored
+ *   3. %USERPROFILE%/.config/orkas-video-studio/gemini.json ({"apiKey": "..."})
  * Output: 24 kHz 16-bit mono WAV.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { homedir } from 'node:os';
+import { fileURLToPath } from 'node:url';
 
 const MODEL = process.env.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts';
 
@@ -22,11 +25,18 @@ function arg(name, fallback = undefined) {
 
 function apiKey() {
   if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY;
+  const repoRoot = dirname(dirname(fileURLToPath(import.meta.url)));
+  for (const envPath of [join(process.cwd(), '.env'), join(repoRoot, '.env')]) {
+    try {
+      const m = /^\s*GEMINI_API_KEY\s*=\s*"?([^"\r\n]+)"?\s*$/m.exec(readFileSync(envPath, 'utf8'));
+      if (m) return m[1];
+    } catch {}
+  }
   try {
     const p = join(homedir(), '.config', 'orkas-video-studio', 'gemini.json');
     return JSON.parse(readFileSync(p, 'utf8')).apiKey;
   } catch {
-    console.error('No GEMINI_API_KEY env var and no ~/.config/orkas-video-studio/gemini.json');
+    console.error('No GEMINI_API_KEY found: set the env var, put GEMINI_API_KEY=... in .env at the repo root, or create ~/.config/orkas-video-studio/gemini.json');
     process.exit(1);
   }
 }

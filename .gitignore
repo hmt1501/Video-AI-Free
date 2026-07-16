@@ -5,5 +5,10 @@ node_modules/
 dist/
 *.log
 
+# API keys — never commit
+.env
+.env.*
+!.env.example
+
 # QA repair state is machine-local
 demo-tiktok/project/composition/qa/draft-repair-state.json

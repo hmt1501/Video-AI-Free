@@ -79,7 +79,7 @@ Copy thư mục `demo-tiktok` làm template, sửa `index.html` + `design-contra
 
 TTS dùng **Gemini TTS** (key Google AI Studio) qua script `scripts/tts-gemini.mjs` (vì `ovs speak` chỉ nhận endpoint kiểu OpenAI, Gemini không tương thích).
 
-**Cấu hình key (KHÔNG commit key vào git):** đặt env var `GEMINI_API_KEY`, hoặc tạo file `%USERPROFILE%\.config\orkas-video-studio\gemini.json` nội dung `{"apiKey":"<key của bạn>"}`.
+**Cấu hình key (KHÔNG commit key vào git):** copy `.env.example` thành `.env` ở gốc repo và điền key (`GEMINI_API_KEY=...`) — file `.env` đã nằm trong `.gitignore`. Ngoài ra script cũng nhận env var `GEMINI_API_KEY`, hoặc file `%USERPROFILE%\.config\orkas-video-studio\gemini.json` nội dung `{"apiKey":"<key>"}` (ưu tiên theo thứ tự: env var → `.env` → file config).
 
 Quy trình cho một video mới có thuyết minh:
 
