@@ -8,6 +8,8 @@ Yêu cầu: đã setup xong theo [README.md](README.md) (`ovs doctor` trả về
 
 ## ⚡ Chế độ TỰ ĐỘNG — 1 lệnh, không cần agent
 
+> Hướng dẫn đầy đủ + template JSON + prompt nhờ AI viết kịch bản: xem [HUONG-DAN-TU-DONG.md](HUONG-DAN-TU-DONG.md)
+
 Nếu bạn tự viết được kịch bản thì không cần Claude Code: điền nội dung vào 1 file JSON rồi chạy 1 lệnh, script tự lo toàn bộ (TTS → đo giây → timeline → dựng hình → render qua QA gate → phụ đề → `video-final.mp4`):
 
 ```powershell

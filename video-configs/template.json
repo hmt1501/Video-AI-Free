@@ -1,0 +1,32 @@
+{
+  "name": "ten-video-khong-dau",
+  "voice": "Kore",
+  "style": "Đọc bằng tiếng Việt, giọng trẻ trung năng lượng cao, tốc độ nhanh vừa phải như video TikTok",
+  "hook": {
+    "chip": "NHÃN NGẮN",
+    "title": "TIÊU ĐỀ TO GÂY TÒ MÒ",
+    "sub": "Dòng phụ dưới tiêu đề",
+    "narration": "Câu mở đầu 12 đến 16 từ, gây tò mò bằng con số hoặc câu hỏi nhé!"
+  },
+  "scenes": [
+    {
+      "label": "MẸO 1/3",
+      "title": "Tiêu đề ý thứ nhất",
+      "desc": "Một dòng tóm tắt ngắn cho ý thứ nhất",
+      "narration": "Lời đọc cho ý thứ nhất, khoảng mười ba đến mười sáu từ là vừa đẹp."
+    },
+    {
+      "label": "MẸO 2/3",
+      "title": "Tiêu đề ý thứ hai",
+      "desc": "Một dòng tóm tắt ngắn cho ý thứ hai",
+      "narration": "Lời đọc cho ý thứ hai, mỗi scene chỉ nói đúng một ý duy nhất thôi."
+    },
+    {
+      "label": "MẸO 3/3",
+      "title": "Tiêu đề ý cuối",
+      "desc": "Một dòng tóm tắt ngắn cho ý cuối",
+      "narration": "Lời đọc cho ý cuối cùng và nhớ kết thúc bằng Follow để xem thêm nhé!"
+    }
+  ],
+  "cta": "Follow để xem thêm mỗi ngày"
+}
