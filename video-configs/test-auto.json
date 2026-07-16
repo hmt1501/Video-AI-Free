@@ -1,0 +1,25 @@
+{
+  "name": "test-auto",
+  "voice": "Kore",
+  "hook": {
+    "chip": "TEST",
+    "title": "CHẠY TỰ ĐỘNG",
+    "sub": "Không cần agent",
+    "narration": "Đây là video chạy hoàn toàn tự động bằng một lệnh duy nhất."
+  },
+  "scenes": [
+    {
+      "label": "BƯỚC 1",
+      "title": "Một file config",
+      "desc": "Viết kịch bản vào một file JSON",
+      "narration": "Bạn chỉ cần viết kịch bản vào một file config duy nhất."
+    },
+    {
+      "label": "BƯỚC 2",
+      "title": "Một lệnh duy nhất",
+      "desc": "Script tự lo phần còn lại",
+      "narration": "Chạy một lệnh, script tự lo giọng đọc, dựng hình và phụ đề. Follow để xem thêm nhé!"
+    }
+  ],
+  "cta": "Follow để xem thêm"
+}

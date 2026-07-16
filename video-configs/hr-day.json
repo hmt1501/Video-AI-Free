@@ -1,0 +1,39 @@
+{
+  "name": "hr-day-v2",
+  "voice": "Rasalgethi",
+  "style": "Đọc bằng tiếng Việt, giọng kể chuyện năng lượng, tốc độ nhanh vừa phải như video TikTok",
+  "subject": "A day in the life of a busy HR officer",
+  "hook": {
+    "chip": "NGHỀ HR",
+    "title": "1 NGÀY CỦA HR",
+    "sub": "Bận hơn bạn nghĩ",
+    "narration": "Ai bảo làm HR nhàn? Xem thử một ngày của dân hành chính nhân sự nhé!"
+  },
+  "scenes": [
+    {
+      "label": "08:00",
+      "title": "Email, chấm công",
+      "desc": "Núi email, đơn nghỉ phép chờ xử lý",
+      "narration": "Tám giờ sáng: núi email, đơn nghỉ phép và dữ liệu chấm công đã chờ sẵn."
+    },
+    {
+      "label": "09:30",
+      "title": "Tuyển dụng",
+      "desc": "Lọc CV, hẹn lịch, phỏng vấn liên tục",
+      "narration": "Chín giờ rưỡi: sàng lọc CV, gọi điện hẹn lịch và phỏng vấn ứng viên liên tục."
+    },
+    {
+      "label": "13:30",
+      "title": "Lương, bảo hiểm",
+      "desc": "Tính lương, bảo hiểm, hợp đồng lao động",
+      "narration": "Đầu giờ chiều: xử lý lương thưởng, bảo hiểm và cả chồng hợp đồng lao động."
+    },
+    {
+      "label": "16:00",
+      "title": "Sự kiện công ty",
+      "desc": "Lên lịch, đặt tiệc, trang trí văn phòng",
+      "narration": "Bốn giờ chiều: lo sự kiện công ty — lên lịch, đặt tiệc và trang trí văn phòng. Follow để hiểu nghề HR hơn nhé!"
+    }
+  ],
+  "cta": "Follow để hiểu nghề HR hơn"
+}

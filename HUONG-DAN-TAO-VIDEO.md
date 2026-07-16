@@ -6,6 +6,28 @@ Yêu cầu: đã setup xong theo [README.md](README.md) (`ovs doctor` trả về
 > **Cách nhanh nhất**: dán checklist này cho Claude Code kèm chủ đề, nó tự làm hết.
 > Đọc tiếp nếu muốn hiểu/can thiệp từng bước.
 
+## ⚡ Chế độ TỰ ĐỘNG — 1 lệnh, không cần agent
+
+Nếu bạn tự viết được kịch bản thì không cần Claude Code: điền nội dung vào 1 file JSON rồi chạy 1 lệnh, script tự lo toàn bộ (TTS → đo giây → timeline → dựng hình → render qua QA gate → phụ đề → `video-final.mp4`):
+
+```powershell
+# 1. Copy file mẫu và sửa nội dung (kịch bản, giọng đọc, chữ trên hình):
+Copy-Item video-configs\hr-day.json video-configs\video-moi.json
+# ... mở file sửa bằng bất kỳ editor nào ...
+
+# 2. Chạy:
+node scripts\make-video.mjs video-configs\video-moi.json
+# → ra video-<name>\project\render\video-final.mp4 (khoảng 3-5 phút)
+```
+
+Format config (xem mẫu đầy đủ ở `video-configs/hr-day.json`, mẫu tối giản ở `video-configs/test-auto.json`):
+
+- `name`: tên thư mục output (`video-<name>`) · `voice`: giọng (nghe thử ở `voices/`) · `cta`: chữ trên nút follow cuối video
+- `hook`: `chip` (nhãn nhỏ), `title` (tiêu đề to — hiện ngay frame 0 làm cover), `sub` (phụ đề), `narration` (lời đọc)
+- `scenes[]`: mỗi scene có `label` (chip to: mốc giờ / "MẸO 1/3"...), `title`, `desc`, `narration`
+
+Lưu ý: **tránh ký tự `&`, `<`, `>`** trong nội dung; scene cuối nên kết bằng câu kêu gọi follow (khớp với `cta`). Chạy lại không tốn quota TTS: thêm `--skip-tts` (tái dùng giọng đã sinh). Thiết kế của chế độ tự động là template cố định (chip + tiêu đề + card + progress bar, xoay màu accent) — muốn thiết kế riêng theo chủ đề (như keycap, đồng hồ) thì dùng Claude Code theo các bước dưới đây.
+
 ---
 
 ## Bước 0 — Quyết định 4 thứ TRƯỚC khi làm
