@@ -1,0 +1,44 @@
+1
+00:00:00,300 --> 00:00:02,100
+Ai bảo làm HR nhàn?
+
+2
+00:00:02,100 --> 00:00:05,000
+Xem thử một ngày của dân
+hành chính nhân sự nhé!
+
+3
+00:00:05,550 --> 00:00:07,700
+Tám giờ sáng: núi email,
+đơn nghỉ phép
+
+4
+00:00:07,700 --> 00:00:10,280
+và dữ liệu chấm công đã chờ sẵn
+
+5
+00:00:10,750 --> 00:00:13,100
+Chín giờ rưỡi: sàng lọc CV,
+
+6
+00:00:13,100 --> 00:00:15,600
+gọi điện hẹn lịch
+và phỏng vấn liên tục
+
+7
+00:00:16,150 --> 00:00:18,400
+Đầu giờ chiều: xử lý lương thưởng,
+
+8
+00:00:18,400 --> 00:00:20,800
+bảo hiểm và cả chồng
+hợp đồng lao động
+
+9
+00:00:21,250 --> 00:00:24,200
+Bốn giờ chiều: lo sự kiện công ty
+
+10
+00:00:24,200 --> 00:00:26,600
+lên lịch, đặt tiệc
+và trang trí văn phòng

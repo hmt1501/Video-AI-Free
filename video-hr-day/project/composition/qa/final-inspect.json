@@ -1,0 +1,65 @@
+{
+  "ok": true,
+  "errorCount": 0,
+  "warningCount": 2,
+  "issueCount": 2,
+  "totalIssueCount": 2,
+  "issues": [
+    {
+      "code": "FONT_TOO_SMALL",
+      "severity": "warning",
+      "message": "Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 54px, 56px, 60px. Raise body text to >= the floor and titles well above it, or it won't read at phone size.",
+      "source": "ovs-craft-lint"
+    },
+    {
+      "code": "PALETTE_LARGE",
+      "severity": "warning",
+      "message": "14 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first.",
+      "source": "ovs-craft-lint"
+    }
+  ],
+  "engine": "hyperframes",
+  "raw": {
+    "schemaVersion": 1,
+    "duration": 30,
+    "samples": [
+      1.667,
+      5,
+      8.333,
+      11.667,
+      15,
+      18.333,
+      21.667,
+      25,
+      28.333
+    ],
+    "tolerance": 2,
+    "strict": false,
+    "collapseStatic": true,
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "issueCount": 0,
+    "totalIssueCount": 0,
+    "truncated": false,
+    "issues": [],
+    "_meta": {
+      "version": "0.7.21",
+      "latestVersion": "0.7.58",
+      "updateAvailable": true
+    },
+    "craft": [
+      {
+        "level": "warn",
+        "code": "FONT_TOO_SMALL",
+        "message": "Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 54px, 56px, 60px. Raise body text to >= the floor and titles well above it, or it won't read at phone size."
+      },
+      {
+        "level": "warn",
+        "code": "PALETTE_LARGE",
+        "message": "14 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first."
+      }
+    ]
+  }
+}

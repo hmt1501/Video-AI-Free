@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="./assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("./assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+        font-weight: 500 600;
+      }
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("./assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype");
+        font-weight: 700 800;
+      }
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("./assets/fonts/BeVietnamPro-Black.ttf") format("truetype");
+        font-weight: 900;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0f1a; }
+      body { font-family: "Be Vietnam Pro", Arial, sans-serif; color: #f4f7ff; }
+
+      :root {
+        --bg: #0b0f1a;
+        --surface: #1b2138;
+        --surface-edge: #3a4568;
+        --text: #f4f7ff;
+        --muted: #8b93b0;
+        --morning: #4cc2ff;
+        --recruit: #b18cff;
+        --payroll: #ffb84c;
+        --event: #ff7a6b;
+      }
+
+      .clip { position: absolute; inset: 0; }
+      .inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; }
+
+      .chip {
+        display: inline-block;
+        padding: 18px 44px;
+        border-radius: 999px;
+        border: 3px solid var(--muted);
+        color: var(--muted);
+        font-size: 48px;
+        font-weight: 800;
+        letter-spacing: 6px;
+      }
+
+      .timechip {
+        display: inline-flex; align-items: center; gap: 28px;
+        padding: 30px 64px;
+        background: linear-gradient(180deg, #2a3350, #1b2138);
+        border: 3px solid var(--surface-edge);
+        border-radius: 36px;
+        box-shadow: 0 14px 0 #0e1326, 0 24px 40px rgba(0, 0, 0, 0.55);
+        font-size: 120px; font-weight: 900; letter-spacing: 4px;
+      }
+      .timechip .dot { width: 26px; height: 26px; border-radius: 50%; }
+
+      .title { font-size: 104px; font-weight: 900; line-height: 1.12; text-align: center; }
+      .title-row { display: flex; align-items: center; gap: 30px; }
+      .body-line { font-size: 54px; font-weight: 600; color: var(--text); text-align: center; max-width: 888px; line-height: 1.35; }
+
+      .desc-card {
+        background: rgba(27, 33, 56, 0.85);
+        border: 3px solid var(--surface-edge);
+        border-radius: 36px;
+        padding: 44px 56px;
+        max-width: 888px;
+      }
+
+      .cta-bar {
+        position: absolute; left: 96px; right: 96px; bottom: 160px;
+        background: var(--event); color: #14100a;
+        border-radius: 36px;
+        padding: 44px 32px;
+        font-size: 56px; font-weight: 900; text-align: center;
+      }
+
+      .daybar-wrap {
+        position: absolute; left: 96px; right: 96px; bottom: 92px;
+        height: 12px; border-radius: 999px;
+        background: rgba(139, 147, 176, 0.28);
+        overflow: hidden;
+      }
+      .day-fill {
+        width: 100%; height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--morning), var(--recruit), var(--payroll), var(--event));
+        transform-origin: left center;
+      }
+
+      .accent-morning { color: var(--morning); }
+      .accent-recruit { color: var(--recruit); }
+      .accent-payroll { color: var(--payroll); }
+      .accent-event { color: var(--event); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="1080" data-height="1920">
+
+      <audio id="narration" src="./assets/narration.mp3"
+             data-start="0" data-duration="30" data-track-index="0" data-volume="1"></audio>
+
+      <!-- Day progress bar, persists across the whole video -->
+      <div id="daybar" class="clip" data-start="0" data-duration="30" data-track-index="2">
+        <div class="daybar-wrap"><div class="day-fill"></div></div>
+      </div>
+
+      <!-- Scene 1 : hook (0 - 5.3s) -->
+      <div id="s1" class="clip" data-start="0" data-duration="5.3" data-track-index="1">
+        <div class="inner" style="justify-content: center; gap: 56px;">
+          <div class="chip s1-chip">NGHỀ HR</div>
+          <div class="title s1-title" style="font-size: 144px;">1 NGÀY CỦA HR</div>
+          <div class="body-line s1-sub accent-morning" style="font-size: 60px; font-weight: 800;">Bận hơn bạn nghĩ</div>
+          <svg class="s1-clock" viewBox="0 0 24 24" style="width: 170px; height: 170px; margin-top: 36px;">
+            <circle cx="12" cy="12" r="9.5" fill="none" stroke="#4cc2ff" stroke-width="1.6"/>
+            <path d="M12 6.5V12l3.5 2.4" fill="none" stroke="#f4f7ff" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Scene 2 : 08:00 email + cham cong (5.3 - 10.5s) -->
+      <div id="s2" class="clip" data-start="5.3" data-duration="5.2" data-track-index="1">
+        <div class="inner" style="justify-content: center; gap: 60px;">
+          <div class="timechip s2-time accent-morning"><span class="dot" style="background: var(--morning);"></span>08:00</div>
+          <div class="title-row s2-text-title">
+            <svg viewBox="0 0 24 24" style="width: 92px; height: 92px;">
+              <rect x="3" y="5.5" width="18" height="13" rx="2.2" fill="none" stroke="#4cc2ff" stroke-width="1.7"/>
+              <path d="M3.6 6.6 12 12.6l8.4-6" fill="none" stroke="#4cc2ff" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+            <div class="title accent-morning">Email, chấm công</div>
+          </div>
+          <div class="desc-card s2-desc"><div class="body-line">Núi email, đơn nghỉ phép chờ xử lý</div></div>
+        </div>
+      </div>
+
+      <!-- Scene 3 : 09:30 tuyen dung (10.5 - 15.9s) -->
+      <div id="s3" class="clip" data-start="10.5" data-duration="5.4" data-track-index="1">
+        <div class="inner" style="justify-content: flex-start; padding-top: 320px; gap: 60px;">
+          <div class="timechip s3-time accent-recruit"><span class="dot" style="background: var(--recruit);"></span>09:30</div>
+          <div class="title-row s3-text-title" style="margin-top: 90px;">
+            <svg viewBox="0 0 24 24" style="width: 92px; height: 92px;">
+              <rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="#b18cff" stroke-width="1.7"/>
+              <circle cx="12" cy="9" r="2.3" fill="none" stroke="#b18cff" stroke-width="1.5"/>
+              <path d="M8.2 16.5c.8-2 2.2-3 3.8-3s3 1 3.8 3" fill="none" stroke="#b18cff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div class="title accent-recruit">Tuyển dụng</div>
+          </div>
+          <div class="desc-card s3-desc"><div class="body-line">Lọc CV, hẹn lịch, phỏng vấn liên tục</div></div>
+        </div>
+      </div>
+
+      <!-- Scene 4 : 13:30 luong bao hiem (15.9 - 21s) -->
+      <div id="s4" class="clip" data-start="15.9" data-duration="5.1" data-track-index="1">
+        <div class="inner" style="justify-content: center; gap: 60px;">
+          <div class="timechip s4-time accent-payroll"><span class="dot" style="background: var(--payroll);"></span>13:30</div>
+          <div class="title-row s4-text-title">
+            <svg viewBox="0 0 24 24" style="width: 92px; height: 92px;">
+              <circle cx="12" cy="12" r="8.6" fill="none" stroke="#ffb84c" stroke-width="1.7"/>
+              <path d="M12 7.2v9.6M9.4 9.6c0-1.1 1.1-1.9 2.6-1.9s2.6.8 2.6 1.9c0 2.8-5.2 1.9-5.2 4.8 0 1.1 1.1 1.9 2.6 1.9s2.6-.8 2.6-1.9" fill="none" stroke="#ffb84c" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div class="title accent-payroll">Lương, bảo hiểm</div>
+          </div>
+          <div class="desc-card s4-desc"><div class="body-line">Tính lương, bảo hiểm, hợp đồng lao động</div></div>
+        </div>
+      </div>
+
+      <!-- Scene 5 : 16:00 su kien + CTA (21 - 30s) -->
+      <div id="s5" class="clip" data-start="21" data-duration="9" data-track-index="1">
+        <div class="inner" style="justify-content: center; gap: 60px; padding-bottom: 260px;">
+          <div class="timechip s5-time accent-event"><span class="dot" style="background: var(--event);"></span>16:00</div>
+          <div class="title-row s5-text-title">
+            <svg viewBox="0 0 24 24" style="width: 92px; height: 92px;">
+              <ellipse cx="12" cy="9" rx="5.2" ry="6.2" fill="none" stroke="#ff7a6b" stroke-width="1.7"/>
+              <path d="M12 15.2l-1 1.6h2z" fill="#ff7a6b"/>
+              <path d="M12 16.8c0 2.4-1.6 3-3.2 4" fill="none" stroke="#ff7a6b" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div class="title accent-event">Sự kiện công ty</div>
+          </div>
+          <div class="desc-card s5-desc"><div class="body-line">Lên lịch, đặt tiệc, trang trí văn phòng</div></div>
+        </div>
+        <div class="cta-bar s5-cta">Follow để hiểu nghề HR hơn</div>
+      </div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      /* Day progress bar: fraction of the 08:00-17:00 workday */
+      tl.set(".day-fill", { scaleX: 0 }, 0)
+        .to(".day-fill", { scaleX: 0.167, duration: 5.2, ease: "none" }, 5.3)
+        .to(".day-fill", { scaleX: 0.611, duration: 5.4, ease: "none" }, 10.5)
+        .to(".day-fill", { scaleX: 0.889, duration: 5.1, ease: "none" }, 15.9)
+        .to(".day-fill", { scaleX: 1, duration: 7.5, ease: "none" }, 21.0);
+
+      /* Scene 1 : hook (0 - 5.3). Title visible at frame 0 (TikTok cover). */
+      tl.from(".s1-title", { scale: 0.9, y: 70, duration: 0.6, ease: "power3.out" }, 0.0)
+        .from(".s1-chip", { opacity: 0, y: -40, duration: 0.5, ease: "power3.out" }, 0.1)
+        .from(".s1-sub", { opacity: 0, y: 60, duration: 0.55, ease: "power3.out" }, 0.35)
+        .from(".s1-clock", { opacity: 0, scale: 0.6, duration: 0.55, ease: "back.out(1.6)" }, 0.6)
+        .to(".s1-clock", { rotation: 12, duration: 0.9, yoyo: true, repeat: 2, ease: "sine.inOut", transformOrigin: "50% 50%" }, 1.4)
+        .to("#s1 .inner", { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" }, 4.85)
+        .set("#s1 .inner", { opacity: 0 }, 5.3);
+
+      /* Scene 2 : 08:00 (5.3 - 10.5) */
+      tl.from(".s2-time", { opacity: 0, scale: 0.7, y: -50, duration: 0.55, ease: "back.out(1.7)" }, 5.35)
+        .from(".s2-text-title", { opacity: 0, y: 70, duration: 0.55, ease: "power3.out" }, 5.7)
+        .from(".s2-desc", { opacity: 0, y: 70, duration: 0.55, ease: "power3.out" }, 6.0)
+        .to(".s2-time", { y: -14, duration: 0.7, yoyo: true, repeat: 1, ease: "sine.inOut" }, 7.0)
+        .to("#s2 .inner", { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" }, 10.05)
+        .set("#s2 .inner", { opacity: 0 }, 10.5);
+
+      /* Scene 3 : 09:30 (10.5 - 15.9) */
+      tl.from(".s3-time", { opacity: 0, scale: 0.7, y: -50, duration: 0.55, ease: "back.out(1.7)" }, 10.55)
+        .from(".s3-text-title", { opacity: 0, y: 70, duration: 0.55, ease: "power3.out" }, 10.9)
+        .from(".s3-desc", { opacity: 0, y: 70, duration: 0.55, ease: "power3.out" }, 11.2)
+        .to(".s3-time", { y: -14, duration: 0.7, yoyo: true, repeat: 1, ease: "sine.inOut" }, 12.2)
+        .to("#s3 .inner", { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" }, 15.45)
+        .set("#s3 .inner", { opacity: 0 }, 15.9);
+
+      /* Scene 4 : 13:30 (15.9 - 21) */
+      tl.from(".s4-time", { opacity: 0, scale: 0.7, y: -50, duration: 0.55, ease: "back.out(1.7)" }, 15.95)
+        .from(".s4-text-title", { opacity: 0, y: 70, duration: 0.55, ease: "power3.out" }, 16.3)
+        .from(".s4-desc", { opacity: 0, y: 70, duration: 0.55, ease: "power3.out" }, 16.6)
+        .to(".s4-time", { y: -14, duration: 0.7, yoyo: true, repeat: 1, ease: "sine.inOut" }, 17.6)
+        .to("#s4 .inner", { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" }, 20.55)
+        .set("#s4 .inner", { opacity: 0 }, 21.0);
+
+      /* Scene 5 : 16:00 + CTA (21 - 30) */
+      tl.from(".s5-time", { opacity: 0, scale: 0.7, y: -50, duration: 0.55, ease: "back.out(1.7)" }, 21.05)
+        .from(".s5-text-title", { opacity: 0, y: 70, duration: 0.55, ease: "power3.out" }, 21.4)
+        .from(".s5-desc", { opacity: 0, y: 70, duration: 0.55, ease: "power3.out" }, 21.7)
+        .to(".s5-time", { y: -14, duration: 0.7, yoyo: true, repeat: 1, ease: "sine.inOut" }, 22.7)
+        .from(".s5-cta", { opacity: 0, y: 160, duration: 0.6, ease: "power3.out" }, 28.4)
+        .to(".s5-cta", { scale: 1.04, duration: 0.35, yoyo: true, repeat: 1, ease: "sine.inOut" }, 29.2);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

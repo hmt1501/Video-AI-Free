@@ -1,0 +1,41 @@
+{
+  "canvas": { "width": 1080, "height": 1920, "duration": 30, "language": "vi" },
+  "audio": { "narration": "assets/narration.mp3" },
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0,
+      "duration": 5.3,
+      "headline": "1 NGÀY CỦA HR",
+      "narration": "Ai bảo làm HR nhàn? Xem thử một ngày của dân hành chính nhân sự nhé!"
+    },
+    {
+      "id": "morning",
+      "start": 5.3,
+      "duration": 5.2,
+      "headline": "Email, chấm công",
+      "narration": "Tám giờ sáng: núi email, đơn nghỉ phép và dữ liệu chấm công đã chờ sẵn."
+    },
+    {
+      "id": "recruiting",
+      "start": 10.5,
+      "duration": 5.4,
+      "headline": "Tuyển dụng",
+      "narration": "Chín giờ rưỡi: sàng lọc CV, gọi điện hẹn lịch và phỏng vấn ứng viên liên tục."
+    },
+    {
+      "id": "payroll",
+      "start": 15.9,
+      "duration": 5.1,
+      "headline": "Lương, bảo hiểm",
+      "narration": "Đầu giờ chiều: xử lý lương thưởng, bảo hiểm và cả chồng hợp đồng lao động."
+    },
+    {
+      "id": "event-cta",
+      "start": 21,
+      "duration": 9,
+      "headline": "Sự kiện công ty",
+      "narration": "Bốn giờ chiều: lo sự kiện công ty — lên lịch, đặt tiệc và trang trí văn phòng. Follow để hiểu nghề HR hơn nhé!"
+    }
+  ]
+}

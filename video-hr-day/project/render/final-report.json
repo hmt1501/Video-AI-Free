@@ -1,0 +1,620 @@
+{
+  "ok": true,
+  "op": "composition.draft",
+  "engine": "ovs-hyperframes-bridge",
+  "composition_dir": "D:\\project\\autovideoai\\video-hr-day\\project\\composition",
+  "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\video-voiced.mp4",
+  "steps": {
+    "repair_budget": {
+      "ok": true,
+      "budget_exhausted": false,
+      "state_path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\qa\\draft-repair-state.json",
+      "max_repair_passes": 2,
+      "failed_attempts": 0,
+      "repair_passes_used": 0,
+      "repair_passes_remaining": 2,
+      "last_error": null
+    },
+    "lint": {
+      "ok": true,
+      "op": "composition.lint",
+      "findings": "{\n  \"ok\": true,\n  \"errorCount\": 0,\n  \"warningCount\": 0,\n  \"issueCount\": 0,\n  \"totalIssueCount\": 0,\n  \"issues\": [],\n  \"engine\": \"ovs-native-preflight\",\n  \"profile\": \"orkas-html-composition\",\n  \"canvas\": {\n    \"width\": 1080,\n    \"height\": 1920,\n    \"durationSec\": 30\n  }\n}"
+    },
+    "authoring": {
+      "ok": true,
+      "mode": "model_authored_html",
+      "path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\index.html",
+      "design_contract_path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\design-contract.json",
+      "scene_map_path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\scene-map.json",
+      "shotlist_path": ""
+    },
+    "contract_html": {
+      "ok": true,
+      "error_count": 0,
+      "warning_count": 0,
+      "issue_count": 0,
+      "contract_path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\design-contract.json",
+      "scene_map_path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\scene-map.json",
+      "issues": []
+    },
+    "source_alignment": {
+      "ok": true,
+      "skipped": true,
+      "reason": "shotlist_missing",
+      "issues": []
+    },
+    "audio_timing": {
+      "ok": true,
+      "skipped": false,
+      "narration_path": "assets/narration.mp3",
+      "narration_file_exists": true,
+      "narration_map_path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\narration-map.json",
+      "narration_line_count": 0,
+      "scene_count": 5,
+      "audio_track_count": 1,
+      "error_count": 0,
+      "warning_count": 0,
+      "issue_count": 0,
+      "issues": []
+    },
+    "hyperframes_lint": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 1,
+      "infoCount": 1,
+      "findings": [
+        {
+          "code": "timeline_track_too_dense",
+          "severity": "warning",
+          "message": "Track 1 has 5 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+          "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate.",
+          "file": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\index.html"
+        }
+      ],
+      "filesScanned": 1,
+      "_meta": {
+        "version": "0.7.21",
+        "latestVersion": "0.7.58",
+        "updateAvailable": true
+      },
+      "craft": [
+        {
+          "level": "warn",
+          "code": "FONT_TOO_SMALL",
+          "message": "Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 54px, 56px, 60px. Raise body text to >= the floor and titles well above it, or it won't read at phone size."
+        },
+        {
+          "level": "warn",
+          "code": "PALETTE_LARGE",
+          "message": "14 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first."
+        }
+      ]
+    },
+    "inspect": {
+      "ok": true,
+      "op": "composition.inspect",
+      "findings": "{\n  \"ok\": true,\n  \"errorCount\": 0,\n  \"warningCount\": 2,\n  \"issueCount\": 2,\n  \"totalIssueCount\": 2,\n  \"issues\": [\n    {\n      \"code\": \"FONT_TOO_SMALL\",\n      \"severity\": \"warning\",\n      \"message\": \"Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 54px, 56px, 60px. Raise body text to >= the floor and titles well above it, or it won't read at phone size.\",\n      \"source\": \"ovs-craft-lint\"\n    },\n    {\n      \"code\": \"PALETTE_LARGE\",\n      \"severity\": \"warning\",\n      \"message\": \"14 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first.\",\n      \"source\": \"ovs-craft-lint\"\n    }\n  ],\n  \"engine\": \"hyperframes\",\n  \"raw\": {\n    \"schemaVersion\": 1,\n    \"duration\": 30,\n    \"samples\": [\n      1.667,\n      5,\n      8.333,\n      11.667,\n      15,\n      18.333,\n      21.667,\n      25,\n      28.333\n    ],\n    \"tolerance\": 2,\n    \"strict\": false,\n    \"collapseStatic\": true,\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"issueCount\": 0,\n    \"totalIssueCount\": 0,\n    \"truncated\": false,\n    \"issues\": [],\n    \"_meta\": {\n      \"version\": \"0.7.21\",\n      \"latestVersion\": \"0.7.58\",\n      \"updateAvailable\": true\n    },\n    \"craft\": [\n      {\n        \"level\": \"warn\",\n        \"code\": \"FONT_TOO_SMALL\",\n        \"message\": \"Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 54px, 56px, 60px. Raise body text to >= the floor and titles well above it, or it won't read at phone size.\"\n      },\n      {\n        \"level\": \"warn\",\n        \"code\": \"PALETTE_LARGE\",\n        \"message\": \"14 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first.\"\n      }\n    ]\n  }\n}",
+      "raw": {
+        "schemaVersion": 1,
+        "duration": 30,
+        "samples": [
+          1.667,
+          5,
+          8.333,
+          11.667,
+          15,
+          18.333,
+          21.667,
+          25,
+          28.333
+        ],
+        "tolerance": 2,
+        "strict": false,
+        "collapseStatic": true,
+        "ok": true,
+        "errorCount": 0,
+        "warningCount": 0,
+        "infoCount": 0,
+        "issueCount": 0,
+        "totalIssueCount": 0,
+        "truncated": false,
+        "issues": [],
+        "_meta": {
+          "version": "0.7.21",
+          "latestVersion": "0.7.58",
+          "updateAvailable": true
+        },
+        "craft": [
+          {
+            "level": "warn",
+            "code": "FONT_TOO_SMALL",
+            "message": "Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 54px, 56px, 60px. Raise body text to >= the floor and titles well above it, or it won't read at phone size."
+          },
+          {
+            "level": "warn",
+            "code": "PALETTE_LARGE",
+            "message": "14 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first."
+          }
+        ]
+      },
+      "draft_disposition": {
+        "blocking_error_count": 0,
+        "advisory_count": 2,
+        "blocking_issues": [],
+        "advisory_issues": [
+          {
+            "code": "FONT_TOO_SMALL",
+            "severity": "warning",
+            "message": "Font sizes below the legibility floor (~71px for a 1920px-tall canvas): 48px, 54px, 56px, 60px. Raise body text to >= the floor and titles well above it, or it won't read at phone size.",
+            "source": "ovs-craft-lint"
+          },
+          {
+            "code": "PALETTE_LARGE",
+            "severity": "warning",
+            "message": "14 distinct chromatic colors in the composition — aim for <= 3-5 on screen at once. Re-check each scene: background least-saturated, one accent that reads first.",
+            "source": "ovs-craft-lint"
+          }
+        ]
+      }
+    },
+    "render": {
+      "output": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\video-voiced.mp4"
+    },
+    "media_probe": {
+      "duration": 30.1,
+      "video_duration": 30,
+      "audio_duration": 30.1,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "has_audio": true,
+      "v_codec": "h264",
+      "a_codec": "aac"
+    },
+    "audio_normalize": {
+      "skipped": false,
+      "reason": "high quality export",
+      "loudness_before": {
+        "input_i": -16.41,
+        "input_tp": -4.28,
+        "input_lra": 5.7,
+        "target_i": -14,
+        "target_tp": -1
+      },
+      "loudness_after": {
+        "input_i": -13.48,
+        "input_tp": -0.79,
+        "input_lra": 5.5,
+        "target_i": -14,
+        "target_tp": -1
+      },
+      "decision": {
+        "normalize": true,
+        "reason": "high quality export"
+      }
+    },
+    "loudness_before": {
+      "input_i": -16.41,
+      "input_tp": -4.28,
+      "input_lra": 5.7,
+      "target_i": -14,
+      "target_tp": -1
+    },
+    "loudness_after": {
+      "input_i": -13.48,
+      "input_tp": -0.79,
+      "input_lra": 5.5,
+      "target_i": -14,
+      "target_tp": -1
+    },
+    "media_qa": {
+      "ok": true,
+      "issue_count": 0,
+      "error_count": 0,
+      "warning_count": 0,
+      "media_duration_seconds": 30.1,
+      "video": {
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "codec": "h264"
+      },
+      "audio": {
+        "codec": "aac",
+        "duration_seconds": 30.1
+      },
+      "expected_audio_end_seconds": 30,
+      "source_audio_tracks": [
+        {
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\assets\\narration.mp3",
+          "start_seconds": 0,
+          "volume": 1,
+          "declared_duration_seconds": 30,
+          "source_duration_seconds": 30,
+          "expected_duration_seconds": 30,
+          "expected_end_seconds": 30
+        }
+      ],
+      "issues": []
+    },
+    "video_qa": {
+      "ok": true,
+      "issue_count": 0,
+      "error_count": 0,
+      "warning_count": 0,
+      "evidence_dir": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence",
+      "contact_sheet": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\contact-sheet.svg",
+      "frame_paths": [
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\first-frame.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\quarter.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\midpoint.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\three-quarter.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payoff-frame.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\hook-mid.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\morning-start.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\morning-mid.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\recruiting-start.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\recruiting-mid.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payroll-start.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payroll-mid.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\event-cta-start.png",
+        "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\event-cta-mid.png"
+      ],
+      "samples": [
+        {
+          "label": "first-frame",
+          "time_seconds": 0,
+          "frame_index": 0,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\first-frame.png",
+          "hash": "c29f525a45382f70f3352e917ff14c00",
+          "brightness": 32.21,
+          "contrast": 217,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "quarter",
+          "time_seconds": 7.5,
+          "frame_index": 225,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\quarter.png",
+          "hash": "2004f73a522ef1add48972aed750e980",
+          "brightness": 35.01,
+          "contrast": 213,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "midpoint",
+          "time_seconds": 15,
+          "frame_index": 450,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\midpoint.png",
+          "hash": "56ca73007257d96b3ca7b478b9d31c7a",
+          "brightness": 34.13,
+          "contrast": 213,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "three-quarter",
+          "time_seconds": 22.5,
+          "frame_index": 675,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\three-quarter.png",
+          "hash": "5aa41f19426770dfb3ac840aab8f9ae1",
+          "brightness": 34.44,
+          "contrast": 213,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "payoff-frame",
+          "time_seconds": 29.93,
+          "frame_index": 898,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payoff-frame.png",
+          "hash": "5565039885c0bd0ffa20595b4f95d8dc",
+          "brightness": 41.47,
+          "contrast": 214,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "hook-mid",
+          "time_seconds": 2.63,
+          "frame_index": 79,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\hook-mid.png",
+          "hash": "5a60c84849bb50c6187f4ce7c2a25449",
+          "brightness": 34.94,
+          "contrast": 214,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "morning-start",
+          "time_seconds": 5.3,
+          "frame_index": 159,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\morning-start.png",
+          "hash": "ae01cd238dcfbcb27b9f888efcfd4468",
+          "brightness": 27.16,
+          "contrast": 40,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "morning-mid",
+          "time_seconds": 7.9,
+          "frame_index": 237,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\morning-mid.png",
+          "hash": "b1de375d6419c9b208f38d8fe8d670e9",
+          "brightness": 35.02,
+          "contrast": 213,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "recruiting-start",
+          "time_seconds": 10.5,
+          "frame_index": 315,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\recruiting-start.png",
+          "hash": "47b36438bbe1d2a1a0d3d51c4122cfd6",
+          "brightness": 27.25,
+          "contrast": 154,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "recruiting-mid",
+          "time_seconds": 13.2,
+          "frame_index": 396,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\recruiting-mid.png",
+          "hash": "ffb759cce2f465b5cc3d4e1f11b5d1dc",
+          "brightness": 34.05,
+          "contrast": 213,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "payroll-start",
+          "time_seconds": 15.9,
+          "frame_index": 477,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payroll-start.png",
+          "hash": "ccac886ba948509513609cd386108d69",
+          "brightness": 27.48,
+          "contrast": 155,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "payroll-mid",
+          "time_seconds": 18.43,
+          "frame_index": 553,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payroll-mid.png",
+          "hash": "a8cd90dcb3e3c34b12139b6f70d2b338",
+          "brightness": 35.62,
+          "contrast": 213,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "event-cta-start",
+          "time_seconds": 21,
+          "frame_index": 630,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\event-cta-start.png",
+          "hash": "32243e15faf63913ae4f27b8d7ab65ae",
+          "brightness": 27.63,
+          "contrast": 157,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "label": "event-cta-mid",
+          "time_seconds": 25.5,
+          "frame_index": 765,
+          "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\event-cta-mid.png",
+          "hash": "d3c4ba594d41788870c450793082d3d0",
+          "brightness": 34.47,
+          "contrast": 212,
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "issues": []
+    }
+  },
+  "repair_budget": {
+    "ok": true,
+    "budget_exhausted": false,
+    "state_path": "D:\\project\\autovideoai\\video-hr-day\\project\\composition\\qa\\draft-repair-state.json",
+    "max_repair_passes": 2,
+    "failed_attempts": 0,
+    "repair_passes_used": 0,
+    "repair_passes_remaining": 2,
+    "last_error": null
+  },
+  "media": {
+    "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\video-voiced.mp4",
+    "bytes": 4435193
+  },
+  "video_qa": {
+    "ok": true,
+    "issue_count": 0,
+    "error_count": 0,
+    "warning_count": 0,
+    "evidence_dir": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence",
+    "contact_sheet": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\contact-sheet.svg",
+    "frame_paths": [
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\first-frame.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\quarter.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\midpoint.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\three-quarter.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payoff-frame.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\hook-mid.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\morning-start.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\morning-mid.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\recruiting-start.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\recruiting-mid.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payroll-start.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payroll-mid.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\event-cta-start.png",
+      "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\event-cta-mid.png"
+    ],
+    "samples": [
+      {
+        "label": "first-frame",
+        "time_seconds": 0,
+        "frame_index": 0,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\first-frame.png",
+        "hash": "c29f525a45382f70f3352e917ff14c00",
+        "brightness": 32.21,
+        "contrast": 217,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "quarter",
+        "time_seconds": 7.5,
+        "frame_index": 225,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\quarter.png",
+        "hash": "2004f73a522ef1add48972aed750e980",
+        "brightness": 35.01,
+        "contrast": 213,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "midpoint",
+        "time_seconds": 15,
+        "frame_index": 450,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\midpoint.png",
+        "hash": "56ca73007257d96b3ca7b478b9d31c7a",
+        "brightness": 34.13,
+        "contrast": 213,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "three-quarter",
+        "time_seconds": 22.5,
+        "frame_index": 675,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\three-quarter.png",
+        "hash": "5aa41f19426770dfb3ac840aab8f9ae1",
+        "brightness": 34.44,
+        "contrast": 213,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "payoff-frame",
+        "time_seconds": 29.93,
+        "frame_index": 898,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payoff-frame.png",
+        "hash": "5565039885c0bd0ffa20595b4f95d8dc",
+        "brightness": 41.47,
+        "contrast": 214,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "hook-mid",
+        "time_seconds": 2.63,
+        "frame_index": 79,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\hook-mid.png",
+        "hash": "5a60c84849bb50c6187f4ce7c2a25449",
+        "brightness": 34.94,
+        "contrast": 214,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "morning-start",
+        "time_seconds": 5.3,
+        "frame_index": 159,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\morning-start.png",
+        "hash": "ae01cd238dcfbcb27b9f888efcfd4468",
+        "brightness": 27.16,
+        "contrast": 40,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "morning-mid",
+        "time_seconds": 7.9,
+        "frame_index": 237,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\morning-mid.png",
+        "hash": "b1de375d6419c9b208f38d8fe8d670e9",
+        "brightness": 35.02,
+        "contrast": 213,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "recruiting-start",
+        "time_seconds": 10.5,
+        "frame_index": 315,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\recruiting-start.png",
+        "hash": "47b36438bbe1d2a1a0d3d51c4122cfd6",
+        "brightness": 27.25,
+        "contrast": 154,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "recruiting-mid",
+        "time_seconds": 13.2,
+        "frame_index": 396,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\recruiting-mid.png",
+        "hash": "ffb759cce2f465b5cc3d4e1f11b5d1dc",
+        "brightness": 34.05,
+        "contrast": 213,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "payroll-start",
+        "time_seconds": 15.9,
+        "frame_index": 477,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payroll-start.png",
+        "hash": "ccac886ba948509513609cd386108d69",
+        "brightness": 27.48,
+        "contrast": 155,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "payroll-mid",
+        "time_seconds": 18.43,
+        "frame_index": 553,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\payroll-mid.png",
+        "hash": "a8cd90dcb3e3c34b12139b6f70d2b338",
+        "brightness": 35.62,
+        "contrast": 213,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "event-cta-start",
+        "time_seconds": 21,
+        "frame_index": 630,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\event-cta-start.png",
+        "hash": "32243e15faf63913ae4f27b8d7ab65ae",
+        "brightness": 27.63,
+        "contrast": 157,
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "label": "event-cta-mid",
+        "time_seconds": 25.5,
+        "frame_index": 765,
+        "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-evidence\\event-cta-mid.png",
+        "hash": "d3c4ba594d41788870c450793082d3d0",
+        "brightness": 34.47,
+        "contrast": 212,
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "issues": []
+  },
+  "next_action": "open_gate_d",
+  "advisory_policy": "visual inspect warnings are advisory after ok:true; open Gate D instead of self-repairing.",
+  "report_path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\final-report.json"
+}

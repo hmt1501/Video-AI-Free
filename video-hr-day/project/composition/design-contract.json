@@ -1,0 +1,106 @@
+{
+  "canvas": {
+    "aspect_ratio": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "duration": 30,
+    "fps": 30,
+    "language": "vi"
+  },
+  "aesthetic": {
+    "subject_world": "A day in the life of a busy HR/admin officer in a Vietnamese office",
+    "audience": "Vietnamese TikTok viewers: office workers, students curious about the HR profession",
+    "one_job": "Show how packed an HR officer's day is, hour by hour, to earn a follow from people interested in the profession",
+    "tone": "relatable, fast-paced, lightly humorous office energy",
+    "signature_device": "An oversized digital clock chip that pops to each new hour, with a workday progress bar (08:00 to 17:00) filling along the bottom of the whole video",
+    "aesthetic_risk": "Clock chips could read as static labels if the pop-in and progress bar motion are too subtle",
+    "anti_template_check": "Rejected the generic numbered-listicle card sequence; replaced with a time-of-day clock device and a persistent day-progress bar that comes directly from the 'one busy day' subject"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0,
+      "duration": 5.3,
+      "copy": ["NGHỀ HR", "1 NGÀY CỦA HR", "Bận hơn bạn nghĩ"],
+      "visual_focus": "Stacked oversized type with a floating clock icon",
+      "layout": "full-frame stacked type"
+    },
+    {
+      "id": "morning",
+      "start": 5.3,
+      "duration": 5.2,
+      "copy": ["08:00", "Email, chấm công", "Núi email, đơn nghỉ phép chờ xử lý"],
+      "visual_focus": "Digital clock chip 08:00 pops in, envelope icon beside title, description card below",
+      "layout": "clock chip center, description card below"
+    },
+    {
+      "id": "recruiting",
+      "start": 10.5,
+      "duration": 5.4,
+      "copy": ["09:30", "Tuyển dụng", "Lọc CV, hẹn lịch, phỏng vấn liên tục"],
+      "visual_focus": "Clock chip 09:30 high in frame, CV document icon, description card lower",
+      "layout": "clock chip high, description card low"
+    },
+    {
+      "id": "payroll",
+      "start": 15.9,
+      "duration": 5.1,
+      "copy": ["13:30", "Lương, bảo hiểm", "Tính lương, bảo hiểm, hợp đồng lao động"],
+      "visual_focus": "Clock chip 13:30 centered, coin icon beside title, description card below",
+      "layout": "clock chip center, description card below"
+    },
+    {
+      "id": "event-cta",
+      "start": 21,
+      "duration": 9,
+      "copy": ["16:00", "Sự kiện công ty", "Lên lịch, đặt tiệc, trang trí văn phòng", "Follow để hiểu nghề HR hơn"],
+      "visual_focus": "Clock chip 16:00, balloon icon, description card, CTA bar slides up near the end",
+      "layout": "clock chip center, CTA bar bottom"
+    }
+  ],
+  "layout_boxes": {
+    "safe_text_box": "x 96..984, y 260..1660 within 1080x1920",
+    "visual_box": "center band y 560..1200 for clock chips and icons",
+    "caption_box": "bottom band reserved for burned SRT subtitles and the day progress bar (y 1780..1830)",
+    "max_labels_per_scene": 3
+  },
+  "typography_tokens": {
+    "roles": {
+      "title": "scene headline, 104px, weight 900",
+      "clock": "digital time chip, 120px, weight 900",
+      "body": "one-line description, 54px, weight 600",
+      "label": "counter chip and CTA, 48-56px, weight 800"
+    },
+    "floors": {
+      "title_min_px": 72,
+      "body_min_px": 42,
+      "safe_margin_px": 96,
+      "max_text_blocks_per_scene": 2
+    }
+  },
+  "color_tokens": {
+    "background": { "value": "#0b0f1a", "rationale": "dark navy channel-brand base, high contrast" },
+    "surface": { "value": "#1b2138", "rationale": "clock chip and card body" },
+    "text": { "value": "#f4f7ff", "rationale": "primary type" },
+    "muted": { "value": "#8b93b0", "rationale": "chips, progress bar track, secondary copy" },
+    "accent_morning": { "value": "#4cc2ff", "rationale": "cool morning blue, scene 08:00 and hook" },
+    "accent_recruiting": { "value": "#b18cff", "rationale": "mid-morning violet, scene 09:30" },
+    "accent_payroll": { "value": "#ffb84c", "rationale": "afternoon amber, scene 13:30" },
+    "accent_event": { "value": "#ff7a6b", "rationale": "end-of-day coral, scene 16:00 and CTA" }
+  },
+  "motion_budget": {
+    "max_animated_groups_per_scene": 3,
+    "allowed_transitions": ["fade", "slide-up", "clock-pop", "progress-fill"],
+    "easing": "power3.out",
+    "moving_groups": "scene inner container, clock chip, description card / CTA bar, day progress fill",
+    "meaning": "the clock pop marks a new hour of the workday; the bottom bar filling is the day passing"
+  },
+  "scene_variation": "hook is stacked type with floating clock icon; hour scenes alternate clock-chip vertical position (center / high / center / center) and accent color per hour; the final scene adds a CTA bar; the day progress bar persists across all scenes",
+  "audio": {
+    "narration_owner": "compose",
+    "path": "assets/narration.mp3",
+    "target_duration": 30,
+    "render_silent": false,
+    "tts": "Gemini TTS (gemini-2.5-flash-preview-tts, voice Rasalgethi), 5 clips mixed at scene offsets +0.25s"
+  }
+}

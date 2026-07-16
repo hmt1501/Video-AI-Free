@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "failed_attempts": 0,
+  "repair_passes_used": 0,
+  "max_repair_passes": 2,
+  "last_error": null,
+  "history": [
+    {
+      "ts": "2026-07-16T03:09:14.360Z",
+      "code": "E_LINT_BLOCKED",
+      "message": "HyperFrames lint reported blocking errors.",
+      "report_path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\draft-report.json",
+      "repair_target": "",
+      "content_signature": "09d5f2a1a47b41be23228f157a5abeaadf5e2b9c0693ebe3be7f99b7279dac19"
+    }
+  ],
+  "last_success": {
+    "ts": "2026-07-16T03:12:28.314Z",
+    "report_path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\final-report.json",
+    "path": "D:\\project\\autovideoai\\video-hr-day\\project\\render\\video-voiced.mp4",
+    "content_signature": "b9d17ec9d7161f7b2bf9acc3cfba5fdb4d3684aa9e601ed6f1380c69899d52f9"
+  }
+}
